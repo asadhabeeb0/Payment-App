@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {{> header}}
+    <title>Home</title>
+</head>
+
+<body>
+    {{> navbar}}
+
+    <section class="py-2">
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <h1 class="display-3 mt-3 pt-5">
+                    Web Development Ebook
+                </h1>
+                <p class="lead">Web development front to back</p>
+                <form action="/payment" method="POST">
+                    <script src="https://stripe.com/docs/payments" class="stripe-button"
+                        data-key="STRIPE_PUBLIC_KEY"
+                        data-amount="2500" data-name="Web Development Ebook"
+                        data-description="Ebook written by Asad Habeeb" data-image="/images/marketplace.png"
+                        data-locale="auto">
+                        </script>
+                    <script>
+                        // Hide default stripe button
+                        document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+                    </script>
+                    <button type="submit" class="btn btn-outline-dark text-white btn-lg">Buy For $25</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <img src="/images/book.png" alt="" class="img-fluid">
+            </div>
+        </div>
+    </section>
+
+    {{> footer}}
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
